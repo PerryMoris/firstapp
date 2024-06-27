@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from "./Footer"
 import Header from "./Header"
-import {Link} from "react-router-dom"
+import {Link, Outlet} from "react-router-dom"
 export default function Root(){
     return (
         <div >
@@ -10,6 +10,7 @@ export default function Root(){
         <Link to="/">Go Home</Link>
         <Link to="/projects">Projects</Link>
       </div>
+      <Outlet />
       <Footer />
     </div>
     )
