@@ -8,10 +8,7 @@ export default function Root(){
     return (
         <div >
       <Header />
-      <div className="flex-apart">
-        <Link to="/">Go Home</Link>
-        <Link to="/projects">Projects</Link>
-      </div>
+      
       <Outlet />
       <Footer />
     </div>
