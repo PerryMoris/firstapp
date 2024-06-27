@@ -8,8 +8,8 @@ function Header(){
             <h1>ISD-Team</h1>
             <div className='nav--right'>
                 <h4>Project Tracker</h4>
-                <Link to="/" style={{ textDecoration: 'none'}}><a className='nav--button'>Home</a></Link>
-                <Link to="/projects" style={{ textDecoration: 'none'}} ><a className='nav--button'>Projects</a></Link>
+                <Link to="/" style={{ textDecoration: 'none'}}><p className='nav--button'>Home</p></Link>
+                <Link to="/projects" style={{ textDecoration: 'none'}} ><p className='nav--button'>Projects</p></Link>
                 <div className='profile'>
                     <Link to='/profile'><img src={logo} alt='logo'/></Link>
                 </div>   
