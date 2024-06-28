@@ -68,3 +68,38 @@ footer{
   background-color: #26272c;
   text-decoration: none;
 }
+
+.profile-card{
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 2px rgb(199, 199, 199);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  color: #282c34;
+  border-radius: 9px;
+}
+
+.projectCard{
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 2px rgb(199, 199, 199);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  color: #282c34;
+  border-radius: 9px;
+  min-width: 200px;
+  min-height: 300px;
+  max-width: 200px;
+  max-height: 300px;
+}
+
+.grpProject{
+  display: flex;
+  align-items: center;
+}
