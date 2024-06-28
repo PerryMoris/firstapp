@@ -31,31 +31,20 @@ export default function Projects(){
     },
   ]
   const allp = pjects.map((projects) => {
-    return `<Link to="/" style={{ textDecoration: 'none'}}>
-              <ProjectCard 
+    return <ProjectCard 
                 name={projects.name}
                 details={projects.details}
                 date={projects.date}
               />
-            </Link>`
   })
     return (
         <div >
           <h1>Projects page</h1>
           <div className='grpProject'>
+            
+
             {allp}
-            <Link to="/" style={{ textDecoration: 'none'}}>
-              <ProjectCard 
-                name="Gallop 1"
-                details="Inspection of all galop schools in the country"
-                date='12/12/2024'
-              />
-            </Link>
-            <ProjectCard 
-              name="Gallop 2"
-              details="Inspection of all galop schools in the country, from basic to SHS, all pretertiary schools"
-              date='12/12/2024'
-            />
+            
           </div>
         </div>
     )
