@@ -132,6 +132,10 @@ footer{
   box-shadow: 0 0 2px rgb(199, 199, 199);
   background-color: darkgreen;
 }
+.card--button:hover{
+  background-color: #26272c;
+  text-decoration: none;
+}
 
 .card--details{
   overflow: hidden;
@@ -139,4 +143,10 @@ footer{
   text-overflow: ellipsis;
   height:50px;
   line-height:50px;
+}
+hr{
+  color: gray;
+  background-color: gray;
+  height: 5;
+  width: 100%;
 }
