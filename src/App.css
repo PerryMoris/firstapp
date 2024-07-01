@@ -101,6 +101,7 @@ footer{
   max-width: 200px;
   max-height: 300px;
   position: relative;
+  flex: 0 0 1px 1px;
 }
 
 .grpProject{
@@ -120,4 +121,14 @@ footer{
   border-top-left-radius: 9px;
   font-weight: bold;
   color: antiquewhite;
+}
+
+.card--button {
+  /* border: 1px solid rgb(177, 177, 177); */
+  padding: 5px 12px;
+  margin-left: 10px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgb(199, 199, 199);
+  background-color: darkgreen;
 }
