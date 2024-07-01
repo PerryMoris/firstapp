@@ -87,6 +87,7 @@ footer{
 .projectCard{
   margin: 10px;
   padding: 10px;
+  padding-top: 20px;
   box-shadow: 0 0 2px rgb(199, 199, 199);
   display: flex;
   align-items: center;
