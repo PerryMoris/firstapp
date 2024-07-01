@@ -12,6 +12,8 @@
   color: white;
   box-sizing: border-box;
   box-shadow: 0 1px 3px gray;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .nav--right {
@@ -70,7 +72,7 @@ footer{
 }
 
 .profile-card{
-  margin: 10px;
+  margin: 20px 200px;
   padding: 10px;
   box-shadow: 0 0 2px rgb(199, 199, 199);
   display: flex;
@@ -102,5 +104,6 @@ footer{
 .grpProject{
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
