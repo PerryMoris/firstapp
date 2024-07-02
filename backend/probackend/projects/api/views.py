@@ -36,6 +36,13 @@ class TaskCreate(generics.ListCreateAPIView):
         else:
             print(serializer.errors)
 
+class TaskDelete (generics.DestroyAPIView):
+    serializer_class = TaskSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        usr = self.request.user
+        return Taskactivities.objects.filter(user=usr)
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
