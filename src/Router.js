@@ -16,7 +16,7 @@ function Logout(){
 
 function RegisterAndLogout(){
     localStorage.clear()
-    return <Register />
+    return <Register route="/api/user/register/" method="register" />
 }
 
 
@@ -24,7 +24,12 @@ const router = createBrowserRouter(
     [
         {
             path: "/login",
-            element: <Login />,
+            element: <Login route="/api/token/" method="login"/>,
+            errorElement: <NotFound /> ,
+        },
+        {
+            path: "/logout",
+            element: <Logout />,
             errorElement: <NotFound />,
         },
         {
