@@ -22,31 +22,35 @@ function RegisterAndLogout(){
 
 const router = createBrowserRouter(
     [
-        
+        {
+            path: "/login",
+            element: <Login />,
+            errorElement: <NotFound />,
+        },
+        {
+            path: "/register",
+            element: <RegisterAndLogout />,
+            errorElement: <NotFound />,
+        },
         {
             path: "/",
-            element: <Root />,
+            element: <ProtectedRoute><Root /></ProtectedRoute>,
             children: [
                 {
                     path: "/",
-                    element: <Home />,
+                    element: <ProtectedRoute><Home /></ProtectedRoute>,
                     index: true
                 },
                 {
                     path: "/projects",
-                    element: <Projects />,
+                    element: <ProtectedRoute><Projects /></ProtectedRoute>,
                 },
                 {
                     path: "/profile",
-                    element: <Profile />,
-                }, {
-                    path: "/login",
-                    element: <Login />
-                },
-                {
-                    path: "/register",
-                    element: <Register />
-                },
+                    element: <ProtectedRoute><Profile /></ProtectedRoute>,
+                }, 
+                
+                
             ],
             errorElement: <NotFound />,
         }
