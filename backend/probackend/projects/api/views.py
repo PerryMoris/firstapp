@@ -11,6 +11,7 @@ class ProjectViewSer(ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = [AllowAny]
 
+
 class StakeholdersViewSet(ModelViewSet):
     queryset = Stakeholders.objects.all()
     serializer_class = StakeholdersSerializer
@@ -20,6 +21,21 @@ class TaskViewSet(ModelViewSet):
     queryset = Taskactivities.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [AllowAny]
+
+class TaskCreate(generics.ListCreateAPIView):
+    serializer_class = TaskSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        usr = self.request.user
+        return Taskactivities.objects.filter(user=usr)
+    
+    def perform_create (self, serializer):
+        if serializer.is_valid():
+            serializer.save(user=self.request.user)
+        else:
+            print(serializer.errors)
+
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()

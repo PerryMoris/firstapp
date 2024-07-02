@@ -8,7 +8,8 @@ class Project(models.Model):
     enddate = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=225, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='project', null=True, blank=True)
+    
     def __str__(self):
         return f"{self.name} ({str(self.startdate)} - {str(self.enddate)})"
 
@@ -19,13 +20,14 @@ class Stakeholders(models.Model):
     position = models.CharField(max_length=225, null=True, blank=True)
     activity = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='stakeholder', null=True, blank=True)
+
     def __str__(self):
         return f"{self.name} for {str(self.project.name)}"
 
 class Taskactivities(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='task')
     task = models.TextField(null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
     challenges = models.TextField(null=True, blank=True)
