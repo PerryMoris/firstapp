@@ -122,6 +122,17 @@ footer{
   font-weight: bold;
   color: antiquewhite;
 }
+.card--badge-b{
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: navy;
+  padding: 5px 7px;
+  border-radius: 4px;
+  border-top-left-radius: 9px;
+  font-weight: bold;
+  color: antiquewhite;
+}
 
 .card--button {
   /* border: 1px solid rgb(177, 177, 177); */
