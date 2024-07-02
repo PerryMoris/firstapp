@@ -7,6 +7,7 @@ class Project(models.Model):
     startdate = models.DateField(null=True, blank=True)
     enddate = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=225, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return f"{self.name} ({str(self.startdate)} - {str(self.enddate)})"
@@ -17,7 +18,8 @@ class Stakeholders(models.Model):
     email = models.CharField(max_length=225, null=True, blank=True)
     position = models.CharField(max_length=225, null=True, blank=True)
     activity = models.TextField(null=True, blank=True)
-
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    
     def __str__(self):
         return f"{self.name} for {str(self.project.name)}"
 
@@ -27,6 +29,7 @@ class Taskactivities(models.Model):
     task = models.TextField(null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
     challenges = models.TextField(null=True, blank=True)
-
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    
     def __str__ (self):
         return f"{self.user.get_full_name()}, on {self.project.name}"
