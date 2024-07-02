@@ -11,7 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 
 function Logout(){
     localStorage.clear()
-    return <Navigate />
+    return <Navigate to="/login" />
 }
 
 function RegisterAndLogout(){

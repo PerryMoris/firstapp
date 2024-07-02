@@ -10,6 +10,7 @@ export default function Register({ route, method }) {
     const [password, setPassword] = useState("");
     const [first_name, setFirst_name] = useState("");
     const [last_name, setLast_name] = useState("");
+    const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ export default function Register({ route, method }) {
         e.preventDefault();
 
         try {
-            const res = await api.post(route, {first_name, last_name, username, password })
+            const res = await api.post(route, {first_name, last_name, email, username, password })
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
@@ -51,6 +52,13 @@ export default function Register({ route, method }) {
                 value={last_name}
                 onChange={(e) => setLast_name(e.target.value)}
                 placeholder="Lastname"
+            />
+            <input
+                className="form-input"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address"
             />
             <input
                 className="form-input"
