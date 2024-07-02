@@ -35,7 +35,7 @@ const rows = [
 
 export default function Mytasks() {
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div className='Tablestyle'>
       <DataGrid
         rows={rows}
         columns={columns}

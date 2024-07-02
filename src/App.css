@@ -224,3 +224,15 @@ hr{
 .form-button:hover {
   background-color: #0056b3;
 }
+
+.Tablestyle {
+  height: 400; 
+  width: '100%';
+  background-color: rgb(182, 188, 194);
+}
+
+.Homepage{
+  margin: 10px;
+  display: flex;
+  
+}
