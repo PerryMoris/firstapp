@@ -29,13 +29,14 @@ export default function Home(){
     return (
         <div className='Homepage' >
             
-            <div>
-                <h3>My Tasks</h3>
-                <Mytasks />
+                <div className='leftform'>
+                    <h3>My Tasks</h3>
+                    <Mytasks />
                 </div>
                 <div className='rightform'>
+                    
+                    <form onSubmit={handleSubmit} className="form-container-right">
                     <h3>Create Task</h3>
-                    <form onSubmit={handleSubmit} className="form-container">
                     <textarea 
                         rows={5}
                         className="form-input"

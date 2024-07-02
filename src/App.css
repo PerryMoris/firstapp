@@ -226,13 +226,34 @@ hr{
 }
 
 .Tablestyle {
-  height: 400; 
-  width: '100%';
+  height: 500px; 
+  width: 100%;
   background-color: rgb(182, 188, 194);
 }
 
 .Homepage{
-  margin: 10px;
+  margin: 30px;
   display: flex;
-  
+  justify-content: space-around;
+}
+
+.form-container-right {
+  background-color: aliceblue;
+  color:#282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(255, 68, 68, 0.1);
+
+}
+.rightform{
+  /* width: 100%; */
+  flex: 0.5;
+}
+.leftform{
+  flex: 1;
 }
