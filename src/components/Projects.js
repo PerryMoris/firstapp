@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectCard from "./ProjectCard"
 // import {Link} from "react-router-dom"
+<<<<<<< HEAD
 
 export default function Projects(){
   const pjects =[
@@ -41,6 +42,36 @@ export default function Projects(){
                 details={projects.details}
                 date={projects.date}
                 key={projects.id}
+=======
+import API_URL from "../Urls"
+import {useEffect, useState} from 'react'
+
+
+export default function Projects(){
+  const [data, setData] = useState([])
+  useEffect(() => {
+    async function fetchData(){
+      try {
+        const response = await fetch(`${API_URL.projects}`)
+        if (!response.ok){
+          throw new Error('Network response was not successfull');
+        }
+        const result = await response.json()
+        console.log(result)
+        setData(result)
+      } catch (error) {
+        console.error('Error fetching data: ', error)
+      }
+    }
+
+    fetchData();
+  }, []);
+  console.log(data)
+  const allp = data.map((projects) => {
+    return <ProjectCard 
+              key={projects.id}
+                {...projects}
+>>>>>>> 951b489ef9e601a4082a9ea5c3c967afcb539463
               />
   })
     return (
