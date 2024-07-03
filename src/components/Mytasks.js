@@ -33,6 +33,15 @@ export default function Mytasks() {
               .catch(error => { console.error("There was an error deleting the task!", error); 
       
               }); }; 
+    const DeleteButton = ({ id, onDelete }) => (
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => onDelete(id)}
+                >
+                  Delete
+                </Button>
+              );
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'project_name', headerName: 'Project', width: 130 },
@@ -52,10 +61,25 @@ export default function Mytasks() {
           headerName: 'Created On',
           width: 160,
         },
-        { Header: 'Actions', accessor: 'id', Cell: ({ value }) => ( 
-            <Button variant="contained" color="secondary" onClick={() => deleteTask(value)} > Delete </Button> 
-          ) 
+        { 
+          field: 'actions',
+          headerName: 'Actions',
+          width: 120,
+          renderCell: (params) => (
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => deleteTask(params.row.id)}
+            >
+              Delete
+            </Button>
+          ),
         },
+        // { Header: 'Actions', accessor: 'id', Cell: ({ value }) => ( 
+        //     // <Button variant="contained" color="secondary" onClick={() => deleteTask(value)} > Delete </Button>
+        //     // <DeleteButton {deleteTask(value)} /> 
+        //   ) 
+        // },
       ];
     
   return (
