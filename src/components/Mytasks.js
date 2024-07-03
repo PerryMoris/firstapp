@@ -110,7 +110,7 @@ export default function Mytask() {
           </TableHead> 
           <TableBody> 
             {tasks.map(task => ( <TableRow key={task.id}> 
-              <TableCell>{task.project.name}</TableCell> 
+              <TableCell>{task.project_name}</TableCell> 
               <TableCell>{task.task}</TableCell> 
               <TableCell>{task.notes}</TableCell> 
               <TableCell>{task.challenges}</TableCell> 
