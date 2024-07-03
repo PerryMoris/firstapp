@@ -15,7 +15,7 @@ class StakeholdersSerializer(ModelSerializer):
 class TaskSerializer(ModelSerializer):
     class Meta:
         model = Taskactivities
-        fields = ('id', 'project', 'user', 'task', 'notes', 'challenges')
+        fields = ('id', 'project', 'user', 'task', 'notes', 'challenges', 'created_at')
         extra_kwargs = {'user': {'read_only': True}}
 
 class UserSerializer (ModelSerializer):
