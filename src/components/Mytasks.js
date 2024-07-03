@@ -6,8 +6,6 @@ import api from "../api";
 
 export default function Mytasks() {
     const [notes, setNotes] = useState([]);
-    const [content, setContent] = useState("");
-    const [title, setTitle] = useState("");
 
     useEffect(() => {
         getNotes();
@@ -36,6 +34,11 @@ export default function Mytasks() {
         {
           field: 'challenges',
           headerName: 'Challenges',
+          width: 160,
+        },
+        {
+          field: 'created_at',
+          headerName: 'Created On',
           width: 160,
         },
       ];

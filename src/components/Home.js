@@ -10,20 +10,22 @@ export default function Home(){
     const [task, setTask] = useState("");
     const [notes, setNotes] = useState("");
     const [challenges, setChallenges] = useState("");
-    const navigate = useNavigate();
-    const route = "/api/task"
+    // const navigate = useNavigate();
+    // const route = "/api/task"
 
-    const handleSubmit = async (e) => {
+    
+    const createNote = (e) => {
         e.preventDefault();
-
-        try {
-            const res = await api.post(route, { task, notes, challenges })
-           
-            
-        } catch (error) {
-            alert(error)
-        }
+        api
+            .post("/api/createtask/", { task, notes, challenges })
+            .then((res) => {
+                if (res.status === 201) alert("Note created!");
+                else alert("Failed to make note.");
+                
+            })
+            .catch((err) => alert(err));
     };
+
 
     
     return (
@@ -35,7 +37,7 @@ export default function Home(){
                 </div>
                 <div className='rightform'>
                     
-                    <form onSubmit={handleSubmit} className="form-container-right">
+                    <form onSubmit={createNote} className="form-container-right">
                     <h3>Create Task</h3>
                     <textarea 
                         rows={5}
