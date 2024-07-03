@@ -13,5 +13,7 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name="get_token"),
     path('api/token/refresh', TokenRefreshView.as_view(), name="refresh_token"),
     
+    path('api/taskdelete/<int>:pk/', TaskDelete.as_view(), name='deletetask'),
+    path('api/createtask/', TaskCreate.as_view(), name='createtask')
 
 ]

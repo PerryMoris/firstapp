@@ -15,7 +15,7 @@ export default function Mytasks() {
 
     const getNotes = () => {
         api
-            .get("/api/projects/createtask/")
+            .get("/api/createtask/")
             .then((res) => res.data)
             .then((data) => {
                 setNotes(data);
@@ -57,7 +57,7 @@ export default function Mytasks() {
   return (
     <div className='Tablestyle'>
       <DataGrid
-        rows={rows}
+        rows={setNotes}
         columns={columns}
         initialState={{
           pagination: {
