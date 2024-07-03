@@ -272,3 +272,12 @@ hr{
   flex: 1;
 }
 
+.custom-datagrid .MuiDataGrid-cell {
+  white-space: pre-wrap !important; /* Ensure text wrapping */
+  word-wrap: break-word; /* Word wrap for long words */
+}
+
+.Tablestyle .custom-datagrid {
+  white-space: pre-wrap !important; /* Ensure text wrapping */
+  word-wrap: break-word; /* Word wrap for long words */
+}

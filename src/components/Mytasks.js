@@ -45,11 +45,11 @@ export default function Mytasks() {
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'project_name', headerName: 'Project', width: 130 },
-        { field: 'task', headerName: 'Task', width: 130 ,wrapText: true },
+        { field: 'task', headerName: 'Task', width: 160 ,wrapText: true },
         {
           field: 'notes',
           headerName: 'Notes',
-          width: 90,
+          width: 160,
           wrapText: true ,
         },
         {
