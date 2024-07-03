@@ -57,12 +57,12 @@ export default function Home(){
                     
                     <form onSubmit={createNote} className="form-container-right">
                     <h3>Create Task</h3>
-                        <label> Project: 
-                            <select value={selectedProject} onChange={(e) => setSelectedProject(e.target.value)}> 
+                   
+                            <select className="form-input" value={selectedProject} onChange={(e) => setSelectedProject(e.target.value)}> 
                             <option value="">Select a project</option> 
                             {projects.map(project => ( <option key={project.id} value={project.id}>{project.name}</option> ))} 
                             </select>
-                        </label> 
+                     
                     <textarea 
                         rows={5}
                         className="form-input"

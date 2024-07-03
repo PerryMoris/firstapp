@@ -97,56 +97,56 @@ export default function Mytask() {
         .catch(error => { console.error("There was an error deleting the task!", error); 
 
         }); }; 
-      //   return ( 
-      //   <TableContainer component={Paper}> 
-      //   <Table> <TableHead> <TableRow> 
-      //     <TableCell>Project</TableCell> 
-      //     <TableCell>Task</TableCell> 
-      //     <TableCell>Notes</TableCell> 
-      //     <TableCell>Challenges</TableCell> 
-      //     <TableCell>Created At</TableCell> 
-      //     <TableCell>Actions</TableCell> 
-      //     </TableRow> 
-      //     </TableHead> 
-      //     <TableBody> 
-      //       {tasks.map(task => ( <TableRow key={task.id}> 
-      //         <TableCell>{task.project.name}</TableCell> 
-      //         <TableCell>{task.task}</TableCell> 
-      //         <TableCell>{task.notes}</TableCell> 
-      //         <TableCell>{task.challenges}</TableCell> 
-      //         <TableCell>{new Date(task.created_at).toLocaleString()}</TableCell> 
-      //         <TableCell> 
-      //           <Button variant="contained" color="secondary" onClick={() => deleteTask(task.id)} > Delete </Button> 
-      //           </TableCell> </TableRow> ))} </TableBody> </Table> </TableContainer> 
-      // ); }
+        return ( 
+        <TableContainer component={Paper}> 
+        <Table> <TableHead> <TableRow> 
+          <TableCell>Project</TableCell> 
+          <TableCell>Task</TableCell> 
+          <TableCell>Notes</TableCell> 
+          <TableCell>Challenges</TableCell> 
+          <TableCell>Created At</TableCell> 
+          <TableCell>Actions</TableCell> 
+          </TableRow> 
+          </TableHead> 
+          <TableBody> 
+            {tasks.map(task => ( <TableRow key={task.id}> 
+              <TableCell>{task.project.name}</TableCell> 
+              <TableCell>{task.task}</TableCell> 
+              <TableCell>{task.notes}</TableCell> 
+              <TableCell>{task.challenges}</TableCell> 
+              <TableCell>{new Date(task.created_at).toLocaleString()}</TableCell> 
+              <TableCell> 
+                <Button variant="contained" color="secondary" onClick={() => deleteTask(task.id)} > Delete </Button> 
+                </TableCell> </TableRow> ))} </TableBody> </Table> </TableContainer> 
+      ); }
 
 
 
 
 
 
-      const data = useMemo(() => tasks, [tasks]); 
-      const columns = useMemo(() => [ 
-        { Header: 'Project', accessor: 'project.name' }, 
-        { Header: 'Task', accessor: 'task' },
-        { Header: 'Notes', accessor: 'notes' }, 
-        { Header: 'Challenges', accessor: 'challenges' }, 
-        { Header: 'Created At', accessor: 'created_at', Cell: ({ value }) => new Date(value).toLocaleString() }, 
-        { Header: 'Actions', accessor: 'id', Cell: ({ value }) => ( 
-        <Button variant="contained" color="secondary" onClick={() => deleteTask(value)} > Delete </Button> 
-      ) } ], []); 
-      const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, setFilter } = useTable({ columns, data }, useFilters); 
-      return ( 
-      <div> <CSVLink data={tasks} filename={"tasks.csv"}> 
-      <Button variant="contained" color="primary"> Export to CSV </Button> 
-      </CSVLink> 
-      <TableContainer component={Paper}> 
-        <Table {...getTableProps()}> <TableHead> {headerGroups.map(headerGroup => ( 
-          <TableRow {...headerGroup.getHeaderGroupProps()}> 
-          {headerGroup.headers.map(column => ( <TableCell {...column.getHeaderProps()}> 
-            {column.render('Header')} <div> {column.canFilter ? column.render('Filter') : null} 
-              </div> </TableCell> ))} </TableRow> ))} </TableHead> 
-              <TableBody {...getTableBodyProps()}> {rows.map(row => { prepareRow(row); 
-              return ( <TableRow {...row.getRowProps()}> {row.cells.map(cell => ( 
-              <TableCell {...cell.getCellProps()}> {cell.render('Cell')} </TableCell> ))} 
-              </TableRow> ); })} </TableBody> </Table> </TableContainer> </div> ); }
+      // const data = useMemo(() => tasks, [tasks]); 
+      // const columns = useMemo(() => [ 
+      //   { Header: 'Project', accessor: 'project.name' }, 
+      //   { Header: 'Task', accessor: 'task' },
+      //   { Header: 'Notes', accessor: 'notes' }, 
+      //   { Header: 'Challenges', accessor: 'challenges' }, 
+      //   { Header: 'Created At', accessor: 'created_at', Cell: ({ value }) => new Date(value).toLocaleString() }, 
+      //   { Header: 'Actions', accessor: 'id', Cell: ({ value }) => ( 
+      //   <Button variant="contained" color="secondary" onClick={() => deleteTask(value)} > Delete </Button> 
+      // ) } ], [deleteTask]); 
+      // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, setFilter } = useTable({ columns, data }, useFilters); 
+      // return ( 
+      // <div> <CSVLink data={tasks} filename={"tasks.csv"}> 
+      // <Button variant="contained" color="primary"> Export to CSV </Button> 
+      // </CSVLink> 
+      // <TableContainer component={Paper}> 
+      //   <Table {...getTableProps()}> <TableHead> {headerGroups.map(headerGroup => ( 
+      //     <TableRow {...headerGroup.getHeaderGroupProps()}> 
+      //     {headerGroup.headers.map(column => ( <TableCell {...column.getHeaderProps()}> 
+      //       {column.render('Header')} <div> {column.canFilter ? column.render('Filter') : null} 
+      //         </div> </TableCell> ))} </TableRow> ))} </TableHead> 
+      //         <TableBody {...getTableBodyProps()}> {rows.map(row => { prepareRow(row); 
+      //         return ( <TableRow {...row.getRowProps()}> {row.cells.map(cell => ( 
+      //         <TableCell {...cell.getCellProps()}> {cell.render('Cell')} </TableCell> ))} 
+      //         </TableRow> ); })} </TableBody> </Table> </TableContainer> </div> ); }
