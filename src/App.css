@@ -264,7 +264,7 @@ hr{
 }
 
 .Tablestyle {
-  height: 500px; 
+  height: auto; 
   width: 100%;
   background-color: rgb(182, 188, 194);
 }
@@ -302,4 +302,11 @@ hr{
   align-content: center;
   justify-content: center;
   margin: 5px;
+}
+
+.flex-style-start{
+  display: flex; 
+  align-items: center;
+  margin: 10px;
+  
 }

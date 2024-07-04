@@ -1,9 +1,9 @@
 import React from 'react'
 import ProjectCard from "./ProjectCard"
-// import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 import API_URL from "../Urls"
 import {useEffect, useState} from 'react'
-
+import Button from '@mui/material/Button';
 
 export default function Projects(){
   const [data, setData] = useState([])
@@ -34,7 +34,17 @@ export default function Projects(){
   })
     return (
         <div >
-          <h1>Projects page</h1>
+          <div className='flex-style-start'>
+            <h1 style={{marginRight: 15}}>Projects page</h1>
+            <Link to="/projects" >
+            <Button
+              variant="contained"
+              color="success"
+            >
+              Add Project
+            </Button></Link>
+            </div>
+         <hr />
           <div className='grpProject'>
             
 
