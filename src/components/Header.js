@@ -12,10 +12,12 @@ function Header(){
                 <h4>Project Tracker</h4>
                 <Link to="/" style={{ textDecoration: 'none'}}><p className='nav--button'>Home</p></Link>
                 <Link to="/projects" style={{ textDecoration: 'none'}} ><p className='nav--button'>Projects</p></Link>
+                <Link to="/projects" style={{ textDecoration: 'none'}} ><p className='nav--button'>Tasks</p></Link>
+                <Link to="/register" style={{ textDecoration: 'none'}} ><p className='nav--button'>Register</p></Link>
                
-                <div className='profile'>
-                    <Link to='/profile'><img src={logo} alt='logo'/></Link>
-                </div>   
+                {/* <div className='profile'> */}
+                    <Link className='profile' to='/profile'><img src={logo} alt='logo'/></Link>
+                {/* </div>    */}
             </div>
             
         </nav>

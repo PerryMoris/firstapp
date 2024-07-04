@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from ..models import Project, Stakeholders, Taskactivities
 from django.contrib.auth.models import User
 
@@ -13,10 +13,14 @@ class StakeholdersSerializer(ModelSerializer):
         fields = ('id', 'project', 'name', 'email', 'position', 'activity')
 
 class TaskSerializer(ModelSerializer):
+    project_name = SerializerMethodField()
     class Meta:
         model = Taskactivities
-        fields = ('id', 'project', 'user', 'task', 'notes', 'challenges')
+        fields = ('id', 'project', 'project_name', 'user', 'task', 'notes', 'challenges', 'created_at')
         extra_kwargs = {'user': {'read_only': True}}
+    
+    def get_project_name(self, obj):
+        return obj.project.name
 
 class UserSerializer (ModelSerializer):
     class Meta:
