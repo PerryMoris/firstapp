@@ -36,6 +36,10 @@ class TaskCreate(generics.ListCreateAPIView):
         else:
             print(serializer.errors)
 
+class TaskDetail(generics.RetrieveUpdateAPIView):
+    queryset = Taskactivities.objects.all()
+    serializer_class = TaskSerializer
+
 class TaskDelete (generics.DestroyAPIView):
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]

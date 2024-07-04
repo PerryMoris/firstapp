@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import api from "../api";
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 
 export default function Mytasks() {
@@ -66,8 +67,17 @@ export default function Mytasks() {
         { 
           field: 'actions',
           headerName: 'Actions',
-          width: 120,
+          width: 210,
           renderCell: (params) => (
+            <>
+            <Link to={`/updatetask/${params.row.id}/`}>
+            <Button
+              variant="contained"
+              color="primary"
+            >
+              Update
+            </Button>
+            </Link>
             <Button
               variant="contained"
               color="secondary"
@@ -75,6 +85,8 @@ export default function Mytasks() {
             >
               Delete
             </Button>
+            
+            </>
           ),
         },
         // { Header: 'Actions', accessor: 'id', Cell: ({ value }) => ( 

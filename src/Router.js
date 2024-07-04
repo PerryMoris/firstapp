@@ -8,6 +8,7 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
+import Update from "./components/Update"
 
 function Logout(){
     localStorage.clear()
@@ -49,6 +50,10 @@ const router = createBrowserRouter(
                 {
                     path: "/projects",
                     element: <ProtectedRoute><Projects /></ProtectedRoute>,
+                },
+                {
+                    path: "/updatetask",
+                    element: <ProtectedRoute><Update /></ProtectedRoute>,
                 },
                 {
                     path: "/profile",
