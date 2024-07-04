@@ -239,6 +239,22 @@ hr{
   background-color: #0056b3;
 }
 
+.form-button-close {
+  width: 95%;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #de340a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form-button-close:hover {
+  background-color: #a22000;
+}
+
 .Tablestyle {
   height: 500px; 
   width: 100%;
@@ -280,4 +296,11 @@ hr{
 .Tablestyle .custom-datagrid {
   white-space: pre-wrap !important; /* Ensure text wrapping */
   word-wrap: break-word; /* Word wrap for long words */
+}
+
+.flex-style{
+  display: flex; 
+  align-content: center;
+  justify-content: space-around;
+  margin: 5px;
 }

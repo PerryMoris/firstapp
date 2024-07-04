@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from "../api";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const UpdateTaskForm = () => {
     const { id } = useParams();  // Use useParams to get the taskId
@@ -44,33 +44,41 @@ const UpdateTaskForm = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+        <h3>Update/Edit this Task</h3>
+            <form onSubmit={handleSubmit} className='form-container-right'>
                 <label>
-                    Task:
-                    <input
+                    Task</label>
+                    <textarea
                         type="text"
                         name="task"
                         value={taskData.task}
                         onChange={handleChange}
+                        className="form-input"
+                        rows={6}
                     />
-                </label>
                 <label>
-                    Notes:
+                    Notes</label>
                     <textarea
                         name="notes"
                         value={taskData.notes}
                         onChange={handleChange}
+                        className="form-input"
+                        rows={6}
                     />
-                </label>
+                
                 <label>
-                    Challenges:
+                    Challenges</label>
                     <textarea
                         name="challenges"
                         value={taskData.challenges}
                         onChange={handleChange}
+                        className="form-input"
+                        rows={6}
                     />
-                </label>
-                <button type="submit">Update Task</button>
+                <div className='flex-style'>
+                <button className="form-button" type="submit">Update Task</button>
+                <div><Link to="/" ><button className="form-button-close" >Close</button></Link></div>
+                </div>
             </form>
         </>
     );
