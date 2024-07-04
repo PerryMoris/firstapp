@@ -54,7 +54,7 @@ export default function Tasks() {
           field: 'notes',
           headerName: 'Notes',
           width: 160,
-          
+          autosizeOnMount: true,
            autoHeight : true,
         },
         {
@@ -62,6 +62,7 @@ export default function Tasks() {
           headerName: 'Challenges',
           width: 160,
           autoHeight : true,
+          autosizeOnMount: true,
         },
         {
             field: 'user_name',
@@ -84,6 +85,7 @@ export default function Tasks() {
       <DataGrid
         rows={notes}
         columns={columns}
+        getRowHeight={() => 'auto'}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 10 },

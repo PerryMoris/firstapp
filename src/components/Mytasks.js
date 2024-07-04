@@ -69,7 +69,7 @@ export default function Mytasks() {
           headerName: 'Actions',
           width: 210,
           renderCell: (params) => (
-            <>
+            <div className='flex-style'>
             <Link to={`/updatetask/${params.row.id}/`}>
             <Button
               variant="contained"
@@ -80,20 +80,15 @@ export default function Mytasks() {
             </Link>
             <Button
               variant="contained"
-              color="secondary"
+              color="error"
               onClick={() => deleteTask(params.row.id)}
             >
               Delete
             </Button>
             
-            </>
+            </div>
           ),
         },
-        // { Header: 'Actions', accessor: 'id', Cell: ({ value }) => ( 
-        //     // <Button variant="contained" color="secondary" onClick={() => deleteTask(value)} > Delete </Button>
-        //     // <DeleteButton {deleteTask(value)} /> 
-        //   ) 
-        // },
       ];
     
   return (
@@ -101,6 +96,7 @@ export default function Mytasks() {
       <DataGrid
         rows={notes}
         columns={columns}
+        getRowHeight={() => 'auto'}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 10 },

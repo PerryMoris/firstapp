@@ -296,30 +296,10 @@ hr{
   flex: 1;
 }
 
-.MuiDataGrid-row .MuiDataGrid-root .MuiDataGrid-cell, .rendering-zone { 
-  /* max-height: none !important; */
-  maxRowHeight: 100px;
-}
-.MuiDataGrid-root .MuiDataGrid-window {
-   position: relative !important;
-  } 
-.MuiDataGrid-root .MuiDataGrid-viewport { 
-  /* max-height: none !important;  */
-  maxRowHeight: 100px;
-} 
-.MuiDataGrid-root { 
-  /* height: auto !important; */
-  maxRowHeight: 100px;
-}
-
-.MuiDataGrid-root .MuiDataGrid-cell .MuiDataGrid-window {
-  maxRowHeight: 100px;
-
-}
 
 .flex-style{
   display: flex; 
   align-content: center;
-  justify-content: space-around;
+  justify-content: center;
   margin: 5px;
 }
