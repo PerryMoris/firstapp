@@ -8,7 +8,10 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
-import Update from "./components/Update"
+import UpdateTaskForm from "./components/Update"
+import { useParams } from 'react-router-dom'
+
+
 
 function Logout(){
     localStorage.clear()
@@ -21,7 +24,9 @@ function RegisterAndLogout(){
 }
 
 
+
 const router = createBrowserRouter(
+    
     [
         {
             path: "/login",
@@ -52,8 +57,8 @@ const router = createBrowserRouter(
                     element: <ProtectedRoute><Projects /></ProtectedRoute>,
                 },
                 {
-                    path: "/updatetask",
-                    element: <ProtectedRoute><Update /></ProtectedRoute>,
+                    path: "/updatetask/:id",
+                    element: <ProtectedRoute><UpdateTaskForm /></ProtectedRoute>,
                 },
                 {
                     path: "/profile",
