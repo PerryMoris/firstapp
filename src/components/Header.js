@@ -1,18 +1,18 @@
 import React from 'react'
 import logo from '../user.png';
-import {Link, Navigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 
 function Header(){
     return (
         <nav className='App-header'>
-            <h1>ISD-Team</h1>
+            <h1 className='headername'>ISD-Team</h1>
             <div className='nav--right'>
                 <h4>Project Tracker</h4>
                 <Link to="/" style={{ textDecoration: 'none'}}><p className='nav--button'>Home</p></Link>
                 <Link to="/projects" style={{ textDecoration: 'none'}} ><p className='nav--button'>Projects</p></Link>
-                <Link to="/projects" style={{ textDecoration: 'none'}} ><p className='nav--button'>Tasks</p></Link>
+                <Link to="/tasks" style={{ textDecoration: 'none'}} ><p className='nav--button'>Tasks</p></Link>
                 <Link to="/register" style={{ textDecoration: 'none'}} ><p className='nav--button'>Register</p></Link>
                
                 {/* <div className='profile'> */}

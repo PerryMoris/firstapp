@@ -16,6 +16,14 @@
   padding-right: 10px;
 }
 
+.headername {
+  color: goldenrod;
+}
+
+.pagemargin{
+  margin: auto;
+  padding: 50px;
+}
 .nav--right {
   display: flex;
   margin-right: 0;
@@ -288,14 +296,25 @@ hr{
   flex: 1;
 }
 
-.custom-datagrid .MuiDataGrid-cell {
-  white-space: pre-wrap !important; /* Ensure text wrapping */
-  word-wrap: break-word; /* Word wrap for long words */
+.MuiDataGrid-row .MuiDataGrid-root .MuiDataGrid-cell, .rendering-zone { 
+  /* max-height: none !important; */
+  maxRowHeight: 100px;
+}
+.MuiDataGrid-root .MuiDataGrid-window {
+   position: relative !important;
+  } 
+.MuiDataGrid-root .MuiDataGrid-viewport { 
+  /* max-height: none !important;  */
+  maxRowHeight: 100px;
+} 
+.MuiDataGrid-root { 
+  /* height: auto !important; */
+  maxRowHeight: 100px;
 }
 
-.Tablestyle .custom-datagrid {
-  white-space: pre-wrap !important; /* Ensure text wrapping */
-  word-wrap: break-word; /* Word wrap for long words */
+.MuiDataGrid-root .MuiDataGrid-cell .MuiDataGrid-window {
+  maxRowHeight: 100px;
+
 }
 
 .flex-style{

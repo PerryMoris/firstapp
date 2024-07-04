@@ -9,7 +9,7 @@ import Register from "./components/Register"
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import UpdateTaskForm from "./components/Update"
-import { useParams } from 'react-router-dom'
+import Tasks from './components/Tasks'
 
 
 
@@ -63,6 +63,10 @@ const router = createBrowserRouter(
                 {
                     path: "/profile",
                     element: <ProtectedRoute><Profile /></ProtectedRoute>,
+                }, 
+                {
+                    path: "/tasks",
+                    element: <ProtectedRoute><Tasks /></ProtectedRoute>,
                 }, 
                 
                 

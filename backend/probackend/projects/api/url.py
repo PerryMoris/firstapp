@@ -9,7 +9,7 @@ stakeholders_router = DefaultRouter()
 stakeholders_router.register(r'stakeholders', StakeholdersViewSet, basename="stakeholders")
 
 task_router = DefaultRouter()
-task_router.register(r'task', TaskViewSet, basename="task")
+task_router.register(r'tasks', TaskViewSet, basename="tasks")
 
 # taskcreate_router = DefaultRouter()
 # taskcreate_router.register(r'createtask', TaskCreate, basename='createtask')

@@ -18,8 +18,8 @@ class StakeholdersViewSet(ModelViewSet):
     permission_classes = [AllowAny]
 
 class TaskViewSet(ModelViewSet):
-    queryset = Taskactivities.objects.all()
-    serializer_class = TaskSerializer
+    queryset = Taskactivities.objects.all().order_by("-id")
+    serializer_class = AlltaskSerializer
     permission_classes = [AllowAny]
 
 class TaskCreate(generics.ListCreateAPIView):
@@ -28,7 +28,7 @@ class TaskCreate(generics.ListCreateAPIView):
 
     def get_queryset(self):
         usr = self.request.user
-        return Taskactivities.objects.filter(user=usr)
+        return Taskactivities.objects.filter(user=usr).order_by("-id")
     
     def perform_create (self, serializer):
         if serializer.is_valid():
