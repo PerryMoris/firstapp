@@ -18,13 +18,16 @@ class StakeholdersSerializer(ModelSerializer):
 
 class TaskSerializer(ModelSerializer):
     project_name = SerializerMethodField()
+    user_name = SerializerMethodField()
     class Meta:
         model = Taskactivities
-        fields = ('id', 'project', 'project_name', 'user', 'task', 'notes', 'challenges', 'created_at')
+        fields = ('id', 'project', 'project_name', 'user','user_name', 'task', 'notes', 'challenges', 'created_at')
         extra_kwargs = {'user': {'read_only': True}}
     
     def get_project_name(self, obj):
         return obj.project.name
+    def get_user_name(self, obj):
+        return obj.user.get_full_name()
 
 class UserSerializer (ModelSerializer):
     class Meta:

@@ -37,6 +37,9 @@ img {
   height: 30px;
 }
 
+.prodet{
+  padding: 40px;
+}
 .profile{
   display: flex;
   flex-direction: column;

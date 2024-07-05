@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
 import LoadingIndicator from "./LoadingIndicator";
@@ -77,6 +77,12 @@ export default function Register({ route, method }) {
             {loading && <LoadingIndicator />}
             <button className="form-button" type="submit">
                 {name}
+            </button>
+            
+            <button className="form-button" color="success">
+            <Link style={{ textDecoration: 'none'}} to='/login'>
+                Back to Login
+                </Link>
             </button>
         </form>
     );

@@ -55,13 +55,12 @@ export default function Stakeholder(){
         <div className='Homepage' >
             
                 <div className='leftform'>
-                    <h3>Stakeholders</h3>
                     <StackHoldersCard2 />
                 </div>
                 <div className='rightform'>
                     
                     <form onSubmit={createNote} className="form-container-right">
-                    <h3>Create Task</h3>
+                    <h3>Add Stakeholder</h3>
                    
                             <select className="form-input" value={selectedProject} onChange={(e) => setSelectedProject(e.target.value)}> 
                             <option value="">Select a project</option> 

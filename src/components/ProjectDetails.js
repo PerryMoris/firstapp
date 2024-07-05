@@ -30,7 +30,7 @@ export default function ProjectDetails() {
 
   // Once project is loaded, render the details
   return (
-    <div>
+    <div className='prodet'>
         <div className='detail-cont'>
             <div>
                 <h1>{project.name}</h1>

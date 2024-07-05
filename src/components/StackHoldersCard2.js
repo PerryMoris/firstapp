@@ -60,7 +60,7 @@ export default function StackHoldersCard2() {
     
   return (
     <div className='pagemargin'>
-    <h2>Stackholders for the project</h2>
+    <h2>Stackholders for all projects</h2>
     <div className='Tablestyle'>
       <DataGrid
         rows={notes}
