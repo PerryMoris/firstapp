@@ -7,9 +7,19 @@ from rest_framework import generics
 
 
 class ProjectViewSer(ModelViewSet):
-    queryset = Project.objects.all()
+    queryset = Project.objects.all().order_by("-id")
     serializer_class = ProjectSerializer
     permission_classes = [AllowAny]
+
+class ProjectCreate(generics.ListCreateAPIView):
+    serializer_class = ProjectSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create (self, serializer):
+        if serializer.is_valid():
+            serializer.save(created_by=self.request.user)
+        else:
+            print(serializer.errors)
 
 class GetSpecificProject(generics.ListAPIView):
     serializer_class = ProjectSerializer

@@ -30,7 +30,9 @@
   align-items: center;
 
 }
-
+.black{
+  color: #26272c;
+}
 img {
   height: 30px;
 }

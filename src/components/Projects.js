@@ -6,18 +6,18 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import API_URL from '../Urls';
 import ProjectCard from './ProjectCard';
+import { TextareaAutosize } from '@mui/material';
+import api from '../api';
 
 const Projects = () => {
   const [data, setData] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const [newProject, setNewProject] = useState({
-    name: '',
-    details: '',
-    startdate: '',
-    enddate: '',
-    status: 'Open', // Set default status if needed
-  });
-
+  const [name, setPname] = useState("");
+  const [details, setPdetails] = useState("");
+  const [startdate, setPstart] = useState("");
+  const [enddate, setPend] = useState("");
+  const [status, setPstatus] = useState("Open");
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -43,38 +43,21 @@ const Projects = () => {
     setOpenModal(false);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNewProject((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
 
-  const handleSubmit = async (e) => {
+  const createNote = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(`${API_URL.projects}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newProject),
-      });
-      if (!response.ok) {
-        throw new Error('Failed to add project');
-      }
-      const result = await response.json();
-      console.log('Project added successfully:', result);
-
-      // Optionally, update state or close modal after successful submission
-      setData([...data, result]); // Assuming result is the new project object from API
-      handleCloseModal();
-    } catch (error) {
-      console.error('Error adding project:', error);
-      alert('Failed to add project. Please try again.');
-    }
-  };
+    api
+        .post("/api/createproject/", { name, details, startdate, enddate, status })
+        .then((res) => {
+            if (res.status === 201) {
+              alert("Project created!");
+              window.location.reload(); // Reload the page on success
+            } else {
+              alert("Failed to make project.");
+            }
+          })
+        .catch((err) => alert(err));
+};
 
   const allProjects = data.map((project) => (
     <ProjectCard key={project.id} {...project} />
@@ -114,17 +97,19 @@ const Projects = () => {
             p: 4,
           }}
         >
-          <h2 id='modal-modal-title'>Add New Project</h2>
-          <form onSubmit={handleSubmit}>
+         
+          <form onSubmit={createNote}>
+          <h2 className='black'>Add New Project</h2>
             <TextField
               fullWidth
               required
               id='name'
               name='name'
               label='Name'
-              value={newProject.name}
-              onChange={handleChange}
               margin='normal'
+              value={name}
+              onChange={(e) => setPname(e.target.value)}
+              
             />
             <TextField
               fullWidth
@@ -132,8 +117,8 @@ const Projects = () => {
               id='details'
               name='details'
               label='Details'
-              value={newProject.details}
-              onChange={handleChange}
+              value={details}
+              onChange={(e) => setPdetails(e.target.value)}
               margin='normal'
             />
             <TextField
@@ -143,8 +128,8 @@ const Projects = () => {
               name='startdate'
               label='Start Date'
               type='date'
-              value={newProject.startdate}
-              onChange={handleChange}
+              value={startdate}
+              onChange={(e) => setPstart(e.target.value)}
               margin='normal'
               InputLabelProps={{
                 shrink: true,
@@ -156,15 +141,18 @@ const Projects = () => {
               name='enddate'
               label='End Date'
               type='date'
-              value={newProject.enddate}
-              onChange={handleChange}
+              value={enddate}
+              onChange={(e) => setPend(e.target.value)}
               margin='normal'
               InputLabelProps={{
                 shrink: true,
               }}
             />
             <Button type='submit' variant='contained' color='primary'>
-              Add
+              Add Project
+            </Button>
+            <Button onClick={handleCloseModal} variant='contained' color='error'>
+              Close
             </Button>
           </form>
         </Box>

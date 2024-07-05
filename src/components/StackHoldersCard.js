@@ -55,7 +55,7 @@ export default function StackHoldersCard({projectId}) {
           headerName: 'Created On',
           width: 160,
         },
-        ('id', 'project', 'project_name', 'name', 'email', 'position', 'activity')
+       
       ];
     
   return (
