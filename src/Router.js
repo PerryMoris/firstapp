@@ -11,6 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import UpdateTaskForm from "./components/Update"
 import Tasks from './components/Tasks'
 import ProjectDetails from './components/ProjectDetails'
+import Stakeholder from './components/Stakeholders'
 
 
 
@@ -68,6 +69,10 @@ const router = createBrowserRouter(
                 {
                     path: "/tasks",
                     element: <ProtectedRoute><Tasks /></ProtectedRoute>,
+                }, 
+                {
+                    path: "/stakeholder",
+                    element: <ProtectedRoute><Stakeholder /></ProtectedRoute>,
                 }, 
                 {
                     path: "/projectdetails/:projectId",

@@ -40,6 +40,19 @@ class StakeholdersViewSet(ModelViewSet):
     serializer_class = StakeholdersSerializer
     permission_classes = [AllowAny]
 
+class StakeholderCreate(generics.ListCreateAPIView):
+    serializer_class = StakeholdersSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Stakeholders.objects.all().order_by("-id")
+    
+    def perform_create (self, serializer):
+        if serializer.is_valid():
+            serializer.save(created_by=self.request.user)
+        else:
+            print(serializer.errors)
+
 class GetSpecificStakeholder(generics.ListCreateAPIView):
     serializer_class = StakeholdersSerializer
     permission_classes = [IsAuthenticated]

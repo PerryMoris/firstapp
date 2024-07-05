@@ -16,6 +16,7 @@ urlpatterns = [
     path('api/taskdelete/<int:pk>/', TaskDelete.as_view(), name='deletetask'),
     path('api/createtask/', TaskCreate.as_view(), name='createtask'),
     path('api/createproject/', ProjectCreate.as_view(), name='createproject'),
+    path('api/createstake/', StakeholderCreate.as_view(), name='createstakeholder'),
     path('api/updatetask/<int:pk>/', TaskDetail.as_view(), name='task-detail'),
 
     path('api/stasks/<int:iid>/', GetSpecificTask.as_view(), name='specifictask'),

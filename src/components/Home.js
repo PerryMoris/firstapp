@@ -38,10 +38,10 @@ export default function Home(){
             .post("/api/createtask/", { project: selectedProject, task, notes, challenges })
             .then((res) => {
                 if (res.status === 201) {
-                  alert("Note created!");
+                  alert("Task created!");
                   window.location.reload(); // Reload the page on success
                 } else {
-                  alert("Failed to make note.");
+                  alert("Failed to make task.");
                 }
               })
             .catch((err) => alert(err));
