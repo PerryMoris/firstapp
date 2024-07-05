@@ -8,8 +8,10 @@ export default function ProjectCard(props){
             <h1>{props.name.length > 10 ? props.name.substring(0, 10) + "..." : props.name}</h1>
             <hr/>
             <h3>{props.details.length > 35 ? props.details.substring(0, 32) + "..." : props.details}</h3>
-            <p>Started: {props.startdate}</p>
-            <Link to="/projects" style={{ textDecoration: 'none'}}><p className='card--button'>View Details</p></Link>
+            <p>Started: {props.startdate} {props.id}</p>
+            <Link to={`/projectdetails/${props.id}/`} style={{ textDecoration: 'none' }}>
+                <p className='card--button'>View Details</p>
+            </Link>
         </div>
     )
 }

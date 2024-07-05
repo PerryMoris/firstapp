@@ -10,6 +10,7 @@ import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import UpdateTaskForm from "./components/Update"
 import Tasks from './components/Tasks'
+import ProjectDetails from './components/ProjectDetails'
 
 
 
@@ -68,7 +69,10 @@ const router = createBrowserRouter(
                     path: "/tasks",
                     element: <ProtectedRoute><Tasks /></ProtectedRoute>,
                 }, 
-                
+                {
+                    path: "/projectdetails/:projectId",
+                    element: <ProtectedRoute><ProjectDetails /></ProtectedRoute>,
+                },
                 
             ],
             errorElement: <NotFound />,
