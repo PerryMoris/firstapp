@@ -23,31 +23,31 @@ export default function StackHoldersCard({projectId}) {
     };
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'project_name', headerName: 'Project', width: 130 },
-        { field: 'task', 
-            headerName: 'Task', 
+        // { field: 'project_name', headerName: 'Project', width: 130 },
+        { field: 'name', 
+            headerName: 'Name', 
             width: 160 ,
             autoHeight : true,
             autosizeOnMount: true,
         },
         {
-          field: 'notes',
-          headerName: 'Notes',
+          field: 'email',
+          headerName: 'Email',
           width: 160,
           autosizeOnMount: true,
            autoHeight : true,
         },
         {
-          field: 'challenges',
-          headerName: 'Challenges',
+          field: 'position',
+          headerName: 'Position',
           width: 160,
           autoHeight : true,
           autosizeOnMount: true,
         },
         {
-            field: 'user_name',
-            headerName: 'Staff',
-            width: 100,
+            field: 'activity',
+            headerName: 'Activity',
+            width: 140,
             wrapText: true ,
           },
         {
@@ -55,7 +55,7 @@ export default function StackHoldersCard({projectId}) {
           headerName: 'Created On',
           width: 160,
         },
-       
+        ('id', 'project', 'project_name', 'name', 'email', 'position', 'activity')
       ];
     
   return (

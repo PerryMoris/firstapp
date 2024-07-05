@@ -14,6 +14,7 @@ function Header(){
                 <Link to="/projects" style={{ textDecoration: 'none'}} ><p className='nav--button'>Projects</p></Link>
                 <Link to="/tasks" style={{ textDecoration: 'none'}} ><p className='nav--button'>Tasks</p></Link>
                 <Link to="/register" style={{ textDecoration: 'none'}} ><p className='nav--button'>Register</p></Link>
+                <Link to="/logout" style={{ textDecoration: 'none'}} ><p className='nav--buttonLogout'>Logout</p></Link>
                
                 {/* <div className='profile'> */}
                     <Link className='profile' to='/profile'><img src={logo} alt='logo'/></Link>

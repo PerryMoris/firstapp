@@ -310,3 +310,11 @@ hr{
   margin: 10px;
   
 }
+
+.detail-cont{
+  display: flex; 
+  align-content: center;
+  justify-content: center;
+  margin: 5px;
+  background-color: rgb(72, 126, 108);
+}

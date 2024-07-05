@@ -31,15 +31,20 @@ export default function ProjectDetails() {
   // Once project is loaded, render the details
   return (
     <div>
-      <h1>{project.name}</h1>
-      <p>Details: {project.details}</p>
-      <p>Status: {project.status}</p>
-
-      <h2>Stakeholders</h2>
-      <StakeholderCard projectId={project.id} />
-
-      <h2>Tasks</h2>
-      <TaskCard projectId={project.id} />
+        <div className='detail-cont'>
+            <div>
+                <h1>{project.name}</h1>
+                <p><strong>Details:</strong> {project.details}</p>
+                <p><strong>Status:</strong> {project.status}</p>
+                <p><strong>Date:</strong> {project.startdate} - {project.enddate}</p>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <StakeholderCard projectId={project.id} />
+            <hr />
+            <TaskCard projectId={project.id} />
+        </div>
     </div>
   );
 }

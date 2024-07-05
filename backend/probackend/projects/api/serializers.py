@@ -8,9 +8,13 @@ class ProjectSerializer(ModelSerializer):
         fields = ('id', 'name', 'details', 'startdate', 'enddate', 'status')
 
 class StakeholdersSerializer(ModelSerializer):
+    project_name = SerializerMethodField()
     class Meta:
         model = Stakeholders
-        fields = ('id', 'project', 'name', 'email', 'position', 'activity')
+        fields = ('id', 'project', 'project_name', 'name', 'email', 'position', 'activity','created_at')
+       
+    def get_project_name(self, obj):
+        return obj.project.name
 
 class TaskSerializer(ModelSerializer):
     project_name = SerializerMethodField()
