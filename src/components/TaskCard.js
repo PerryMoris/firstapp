@@ -29,6 +29,7 @@ export default function TaskCard({projectId}) {
             width: 160 ,
             autoHeight : true,
             autosizeOnMount: true,
+            flex: 1,
         },
         {
           field: 'notes',
@@ -36,6 +37,7 @@ export default function TaskCard({projectId}) {
           width: 160,
           autosizeOnMount: true,
            autoHeight : true,
+           flex: 1,
         },
         {
           field: 'challenges',
@@ -43,17 +45,20 @@ export default function TaskCard({projectId}) {
           width: 160,
           autoHeight : true,
           autosizeOnMount: true,
+          flex: 1,
         },
         {
             field: 'user_name',
             headerName: 'Staff',
             width: 100,
             wrapText: true ,
+            flex: 1,
           },
         {
           field: 'created_at',
           headerName: 'Created On',
           width: 160,
+          flex: 1,
         },
        
       ];

@@ -43,12 +43,13 @@ export default function Tasks() {
     //           );
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'project_name', headerName: 'Project', width: 130 },
+        { field: 'project_name', headerName: 'Project', width: 130 , flex: 1,},
         { field: 'task', 
             headerName: 'Task', 
             width: 160 ,
             autoHeight : true,
             autosizeOnMount: true,
+            flex: 1,
         },
         {
           field: 'notes',
@@ -69,11 +70,13 @@ export default function Tasks() {
             headerName: 'Staff',
             width: 100,
             wrapText: true ,
+            flex: 1,
           },
         {
           field: 'created_at',
           headerName: 'Created On',
           width: 160,
+          flex: 1,
         },
        
       ];

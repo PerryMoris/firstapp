@@ -29,6 +29,7 @@ export default function StackHoldersCard({projectId}) {
             width: 160 ,
             autoHeight : true,
             autosizeOnMount: true,
+            flex: 1,
         },
         {
           field: 'email',
@@ -36,6 +37,7 @@ export default function StackHoldersCard({projectId}) {
           width: 160,
           autosizeOnMount: true,
            autoHeight : true,
+           flex: 1,
         },
         {
           field: 'position',
@@ -43,17 +45,20 @@ export default function StackHoldersCard({projectId}) {
           width: 160,
           autoHeight : true,
           autosizeOnMount: true,
+          flex: 1,
         },
         {
             field: 'activity',
             headerName: 'Activity',
             width: 140,
             wrapText: true ,
+            flex: 1,
           },
         {
           field: 'created_at',
           headerName: 'Created On',
           width: 160,
+          flex: 1,
         },
        
       ];
