@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2d3445;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -77,6 +77,9 @@ footer{
   border-radius: 10px;
   box-shadow: 0 0 2px rgb(199, 199, 199);
   background-color: #393c44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hide{
@@ -173,6 +176,10 @@ footer{
   border-radius: 9px;
   box-shadow: 0 0 2px rgb(199, 199, 199);
   background-color: darkgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 .card--button:hover{
   background-color: #26272c;
@@ -250,6 +257,9 @@ hr{
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-button:hover {

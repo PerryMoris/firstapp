@@ -1,5 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 export default function ProjectCard(props){
     return (
@@ -10,7 +11,7 @@ export default function ProjectCard(props){
             <h3 style={{height: 40}}>{props.details.length > 35 ? props.details.substring(0, 32) + "..." : props.details}</h3>
             <p>Started: {props.startdate} {props.id}</p>
             <Link to={`/projectdetails/${props.id}/`} style={{ textDecoration: 'none' }}>
-                <p className='card--button'>View Details</p>
+                <p className='card--button'><VisibilityIcon />&nbsp; View Details</p>
             </Link>
         </div>
     )

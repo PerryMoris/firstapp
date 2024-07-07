@@ -5,7 +5,8 @@ import api from "../api";
 // import { useNavigate } from "react-router-dom";
 // import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import API_URL from "../Urls"
-import { TextField } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import SaveIcon from "@mui/icons-material/Save"
 
 export default function Stakeholder(){
     const [name, setName] = useState("");
@@ -99,7 +100,7 @@ export default function Stakeholder(){
                     />
                     
                     <button className="form-button" type="submit">
-                        Add Stakeholder
+                       <SaveIcon />&nbsp; Add Stakeholder
                     </button>
                 </form>
                 </div>

@@ -6,7 +6,9 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import API_URL from '../Urls';
 import ProjectCard from './ProjectCard';
-import { TextareaAutosize } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import SaveIcon from '@mui/icons-material/Save';
 import api from '../api';
 
 const Projects = () => {
@@ -72,7 +74,7 @@ const Projects = () => {
           color='success'
           onClick={handleOpenModal}
         >
-          Add Project
+          <AddIcon /> Add Project 
         </Button>
       </div>
       <hr />
@@ -149,10 +151,10 @@ const Projects = () => {
               }}
             />
             <Button type='submit' variant='contained' color='primary'>
-              Add Project
+              <SaveIcon />&nbsp; Save
             </Button>
             <Button onClick={handleCloseModal} variant='contained' color='error'>
-              Close
+              <CloseIcon />&nbsp; Close
             </Button>
           </form>
         </Box>

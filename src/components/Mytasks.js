@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import api from "../api";
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 
 export default function Mytasks() {
     const [notes, setNotes] = useState([]);
@@ -67,7 +68,7 @@ export default function Mytasks() {
         { 
           field: 'actions',
           headerName: 'Actions',
-          width: 210,
+          width: 230,
           renderCell: (params) => (
             <div className='flex-style'>
             <Link to={`/updatetask/${params.row.id}/`}>
@@ -75,7 +76,7 @@ export default function Mytasks() {
               variant="contained"
               color="primary"
             >
-              Update
+              <TrackChangesIcon /> Update
             </Button>
             </Link>
             <Button
@@ -83,7 +84,7 @@ export default function Mytasks() {
               color="error"
               onClick={() => deleteTask(params.row.id)}
             >
-              Delete
+              <DeleteForeverIcon/> Delete
             </Button>
             
             </div>
