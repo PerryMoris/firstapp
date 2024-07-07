@@ -28,7 +28,7 @@
   display: flex;
   margin-right: 0;
   align-items: center;
-
+  justify-content: center;
 }
 .black{
   color: #26272c;
@@ -79,9 +79,13 @@ footer{
   background-color: #393c44;
 }
 
-.nav--button:hover{
+.hide{
+  display: none;
+}
+.nav--button:hover  .hide{
   background-color: #26272c;
   text-decoration: none;
+  display: contents;
 }
 
 .nav--buttonLogout {
