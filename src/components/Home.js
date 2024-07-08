@@ -1,9 +1,10 @@
 import React from 'react'
 import Mytasks from './Mytasks'
-import { useEffect, useState } from 'react';
+import { useEffect, useState,  } from 'react';
 import api from "../api";
 import SaveIcon from '@mui/icons-material/Save';
 import API_URL from "../Urls"
+import { useNavigate } from 'react-router-dom';
 
 export default function Home(){
     const [task, setTask] = useState("");
@@ -11,7 +12,7 @@ export default function Home(){
     const [challenges, setChallenges] = useState("");
         const [projects, setProjects] = useState([]); 
         const [selectedProject, setSelectedProject] = useState(""); 
-    // const navigate = useNavigate();
+        const navigate = useNavigate();
     // const route = "/api/task"
 
         useEffect(() => {
@@ -26,6 +27,7 @@ export default function Home(){
                 setProjects(result)
             } catch (error) {
                 console.error('Error fetching data: ', error)
+                //navigate('/login')
             }
             }
 
