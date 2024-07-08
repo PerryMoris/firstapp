@@ -82,7 +82,8 @@ export default function Mytasks() {
             <Button
               variant="contained"
               color="error"
-              onClick={() => deleteTask(params.row.id)}
+              // onClick={() => deleteTask(params.row.id)}
+              onDoubleClick={() => deleteTask(params.row.id)}
             >
               <DeleteForeverIcon/> Delete
             </Button>

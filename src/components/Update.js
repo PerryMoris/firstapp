@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import api from "../api";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link,  useNavigate } from 'react-router-dom';
+
 
 const UpdateTaskForm = () => {
+    const history = useNavigate();
     const { id } = useParams();  // Use useParams to get the taskId
     const [taskData, setTaskData] = useState({
         task: '',
@@ -34,7 +36,8 @@ const UpdateTaskForm = () => {
         api.put(`api/updatetask/${id}/`, taskData)
             .then(response => {
                 console.log('Task updated successfully:', response.data);
-                // Optionally handle success (e.g., show notification)
+                alert("Task updated successfully!");
+                history('/')
             })
             .catch(error => {
                 console.error('Error updating task:', error);
