@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid,  GridToolbar,  GridToolbarExport  } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import api from "../api";
 
@@ -21,26 +21,7 @@ export default function Tasks() {
             })
             .catch((err) => alert(err));
     };
-    // const deleteTask = (taskId) => { 
-    //         api
-    //         .delete(`/api/taskdelete/${taskId}/`) 
-    //       .then(response => { 
-    //         if (response.status === 204) { 
-    //           setNotes(notes.filter(task => task.id !== taskId)); 
-    //         } else { 
-    //           alert("Failed to delete task."); } }) 
-    //           .catch(error => { console.error("There was an error deleting the task!", error); 
-      
-    //           }); }; 
-    // const DeleteButton = ({ id, onDelete }) => (
-    //             <Button
-    //               variant="contained"
-    //               color="secondary"
-    //               onClick={() => onDelete(id)}
-    //             >
-    //               Delete
-    //             </Button>
-    //           );
+
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'project_name', headerName: 'Project', width: 130 , flex: 1,},
@@ -97,7 +78,12 @@ export default function Tasks() {
         pageSizeOptions={[5, 10]}
         checkboxSelection
         className="custom-datagrid"
+        slots={{
+          toolbar: GridToolbar,
+        }}
+        
       />
+     
     </div>
     </div>
   );

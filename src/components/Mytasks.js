@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import api from "../api";
 import Button from '@mui/material/Button';
@@ -107,6 +107,9 @@ export default function Mytasks() {
         pageSizeOptions={[5, 10]}
         checkboxSelection
         className="custom-datagrid"
+        slots={{
+          toolbar: GridToolbar,
+        }}
       />
     </div>
   );
