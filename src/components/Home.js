@@ -18,7 +18,7 @@ export default function Home(){
         useEffect(() => {
             async function fetchData(){
             try {
-                const response = await fetch(`${API_URL.projects}`)
+                const response = await fetch(`${API_URL.projects}`);
                 if (!response.ok){
                 throw new Error('Network response was not successfull');
                 }
