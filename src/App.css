@@ -53,7 +53,9 @@ img {
   font-size: x-small;
   color: black;
 }
-
+small{
+  margin-bottom: 5px;
+}
 footer{
   background-color: #282c34;
   display: flex;
