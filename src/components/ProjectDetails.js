@@ -32,7 +32,7 @@ export default function ProjectDetails() {
   return (
     <div className='prodet'>
         <div className='detail-cont'>
-            <div>
+            <div className='detail-head'>
                 <h1>{project.name}</h1>
                 <p><strong>Details:</strong> {project.details}</p>
                 <p><strong>Status:</strong> {project.status}</p>

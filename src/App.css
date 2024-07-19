@@ -339,3 +339,6 @@ hr{
   margin: 5px;
   background-color: rgb(72, 126, 108);
 }
+.detail-head {
+  padding: 5px 20px;
+}
