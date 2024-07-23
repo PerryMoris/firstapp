@@ -1,5 +1,8 @@
+import React from 'react'
 import axios from 'axios'
 import { ACCESS_TOKEN } from './constants'
+import { useNavigate } from 'react-router-dom'
+
 
 const api =axios.create({
     //baseURL: "http://127.0.0.1:8000"
@@ -10,6 +13,7 @@ const api =axios.create({
     
 })
 
+
 api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem(ACCESS_TOKEN);
@@ -19,7 +23,11 @@ api.interceptors.request.use(
         return config
     },
     (error) => {
-        return Promise.reject(error)
+
+        return (
+            Promise.reject(error),
+            useNavigate('/login')
+        )
     }
 )
 
