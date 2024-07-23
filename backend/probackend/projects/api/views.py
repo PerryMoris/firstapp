@@ -4,7 +4,7 @@ from .serializers import *
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework import generics
-
+from django.contrib.admin.models import LogEntry
 
 class ProjectViewSer(ModelViewSet):
     queryset = Project.objects.all().order_by("-id")
@@ -103,6 +103,10 @@ class GetSpecificTask(generics.ListAPIView):
 class TaskDetail(generics.RetrieveUpdateAPIView):
     queryset = Taskactivities.objects.all()
     serializer_class = TaskSerializer
+
+class LogDetail(generics.ListAPIView):
+    queryset = LogEntry.objects.all().order_by('-id')
+    serializer_class = LogSerializer
 
 class TaskDelete (generics.DestroyAPIView):
     serializer_class = TaskSerializer

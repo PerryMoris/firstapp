@@ -1,7 +1,16 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from ..models import Project, Stakeholders, Taskactivities
 from django.contrib.auth.models import User
+from django.contrib.admin.models import LogEntry
 
+class LogSerializer(ModelSerializer):
+    user_name = SerializerMethodField()
+    class Meta:
+        model = LogEntry
+        fields = ('action_time', 'action_flag', 'object_repr', 'user', 'user_name', 'change_message') 
+    def get_user_name(self, obj):
+        return obj.user.get_full_name()
+    
 class ProjectSerializer(ModelSerializer):
     class Meta:
         model = Project

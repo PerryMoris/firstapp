@@ -12,7 +12,7 @@ import UpdateTaskForm from "./components/Update"
 import Tasks from './components/Tasks'
 import ProjectDetails from './components/ProjectDetails'
 import Stakeholder from './components/Stakeholders'
-
+import LogCard from './components/LogCard'
 
 
 function Logout(){
@@ -77,6 +77,10 @@ const router = createBrowserRouter(
                 {
                     path: "/projectdetails/:projectId",
                     element: <ProtectedRoute><ProjectDetails /></ProtectedRoute>,
+                },
+                {
+                    path: "/log",
+                    element: <ProtectedRoute><LogCard /></ProtectedRoute>,
                 },
                 
             ],

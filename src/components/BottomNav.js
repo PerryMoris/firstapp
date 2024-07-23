@@ -5,10 +5,16 @@ import FolderIcon from '@mui/icons-material/Folder';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function BottomNav() {
   const [value, setValue] = React.useState('recents');
+  const navigate = useNavigate()
 
+  const openLog = () =>{
+    navigate('/log')
+  }
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -19,6 +25,7 @@ export default function BottomNav() {
         label="Recents"
         value="recents"
         icon={<RestoreIcon />}
+        onClick={openLog}
       />
       <BottomNavigationAction
         label="Favorites"
